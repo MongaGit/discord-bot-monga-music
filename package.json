@@ -1,0 +1,9 @@
+{
+  "name": "new-project",
+  "author": "Bruno Gomes",
+  "publish": false,
+  "dependencies": {
+    "lib": "latest",
+    "axios": "^0.27.2"
+  }
+}
