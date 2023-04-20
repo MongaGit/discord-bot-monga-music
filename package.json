@@ -1,9 +1,13 @@
 {
-  "name": "new-project",
+  "name": "music",
   "author": "Bruno Gomes",
   "publish": false,
   "dependencies": {
     "lib": "latest",
-    "axios": "^0.27.2"
+    "ytdl-core": "^4.9.2",
+    "yt-search": "^2.10.1",
+    "ytpl": "^2.2.3",
+    "spotify-web-api-node": "^5.0.2",
+    "spotify-url-info": "^2.2.3"
   }
 }

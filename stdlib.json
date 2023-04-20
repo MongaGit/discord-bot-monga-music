@@ -1,45 +1,59 @@
 {
-  "name": "poleza/discordbot-gamerlobby",
-  "timeout": 10000,
+  "name": "poleza/mongamusic",
+  "timeout": 30000,
   "connector": false,
   "events": {
-    "functions/events/discord/message/button/join/player1.js": {
+    "functions/events/discord/message/create.js": {
+      "name": "discord.message.create"
+    },
+    "functions/events/discord/voice/state/update.js": {
+      "name": "discord.voice.state.update"
+    },
+    "functions/events/discord/bot/playback/finished.js": {
+      "name": "discord.bot.playback.finished"
+    },
+    "functions/events/discord/message/button/stop.js": {
       "name": "discord.message.button.interaction",
       "subtype": {
-        "custom_id": "join-player-1"
+        "custom_id": "stop"
       }
     },
-    "functions/events/discord/message/button/join/player2.js": {
+    "functions/events/discord/message/button/play_pause.js": {
       "name": "discord.message.button.interaction",
       "subtype": {
-        "custom_id": "join-player-2"
+        "custom_id": "play_pause"
       }
     },
-    "functions/events/discord/message/button/join/leave.js": {
+    "functions/events/discord/message/button/skip.js": {
       "name": "discord.message.button.interaction",
       "subtype": {
-        "custom_id": "leavegame"
+        "custom_id": "skip"
       }
     },
-    "functions/events/discord/command/Start.js": {
-      "name": "discord.command",
+    "functions/events/discord/message/button/loop.js": {
+      "name": "discord.message.button.interaction",
       "subtype": {
-        "command": "startgame"
+        "custom_id": "loop"
       }
+    },
+    "functions/events/discord/message/button/fix.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "fix"
+      }
+    },
+    "functions/events/autocode/self/deployed.js": {
+      "name": "autocode.self.deployed"
     }
   },
   "env": [
     {
-      "name": "Title",
-      "description": "Title of Game Start Embed"
+      "name": "Key",
+      "description": "Some secret key for database, example: music2121"
     },
     {
-      "name": "Description",
-      "description": "Description of Game Start Embed"
-    },
-    {
-      "name": "game",
-      "description": "Endpoint Link to the game"
+      "name": "PLAYLIST_LIMIT",
+      "description": "how many song it can add from playlist (default: 20)"
     }
   ]
 }
